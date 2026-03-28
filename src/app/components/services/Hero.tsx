@@ -1,16 +1,18 @@
 // src/components/sections/Hero.tsx
 import React from 'react';
-import { ChevronRight, Zap } from 'lucide-react';
+import { ChevronRight, Zap, Cpu, Code2, Database, MessageCircle } from 'lucide-react';
 import { ParticlesCanvas } from '../ui/ParticlesCanvas';
 
 export const Hero = () => {
+  const whatsappLink = "https://wa.me/51912185258?text=%C2%A1Hola%20OLKOTECH!%20%F0%9F%9A%80%20Vengo%20de%20su%20sitio%20web.%20Me%20interesa%20potenciar%20mi%20empresa%20con%20sus%20soluciones%20de%20Innovaci%C3%B3n%2C%20Tecnolog%C3%ADa%20e%20Ingenier%C3%ADa.%20%C2%BFPodr%C3%ADan%20brindarme%20m%C3%A1s%20informaci%C3%B3n%3F";
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden pt-20">
       
       {/* Canvas de Partículas (Redes/Circuitos) */}
       <ParticlesCanvas />
 
-      {/* Orbes de luz decorativos (Ahora con colores CSS fijos) */}
+      {/* Orbes de luz decorativos */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[var(--color-olkotech-primary)] opacity-10 rounded-full blur-[120px] animate-pulse"></div>
       <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-[var(--color-olkotech-secondary)] opacity-10 rounded-full blur-[100px]"></div>
 
@@ -40,39 +42,42 @@ export const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6">
-              <button className="group relative px-8 py-4 bg-[var(--color-olkotech-dark)] text-white font-bold rounded-2xl overflow-hidden transition-all hover:scale-105 shadow-2xl">
+              {/* BOTÓN WHATSAPP: PROYECTAR AHORA */}
+              <a 
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative px-8 py-4 bg-[var(--color-olkotech-dark)] text-white font-bold rounded-2xl overflow-hidden transition-all hover:scale-105 shadow-2xl flex items-center justify-center gap-2 active:scale-95"
+              >
                 <div className="absolute inset-0 w-0 bg-[var(--color-olkotech-primary)] transition-all duration-300 group-hover:w-full"></div>
                 <span className="relative z-10 flex items-center gap-2 group-hover:text-[var(--color-olkotech-dark)]">
+                  <MessageCircle size={20} />
                   PROYECTAR AHORA <ChevronRight size={20} />
                 </span>
-              </button>
+              </a>
               
-              <button className="px-8 py-4 bg-white text-[var(--color-olkotech-dark)] border-2 border-gray-100 font-bold rounded-2xl hover:bg-gray-50 transition-all flex items-center gap-2 justify-center">
+              <button className="px-8 py-4 bg-white text-[var(--color-olkotech-dark)] border-2 border-gray-100 font-bold rounded-2xl hover:bg-gray-50 transition-all flex items-center gap-2 justify-center active:scale-95">
                 <Zap size={18} className="text-[var(--color-olkotech-primary)]" /> Ver Automatización
               </button>
             </div>
           </div>
 
-          {/* BLOQUE DERECHO: ARTE VISUAL (Mantenemos tu composición original pero con colores) */}
+          {/* BLOQUE DERECHO: ARTE VISUAL */}
           <div className="lg:w-2/5 relative">
             <div className="relative w-full aspect-square flex items-center justify-center animate-float">
-              
-              {/* Círculo Central Dinámico */}
               <div className="absolute inset-0 border-[1px] border-[var(--color-olkotech-primary)]/30 rounded-full animate-[spin_20s_linear_infinite]"></div>
               
-              {/* El Corazón de OLKOTECH (Ahora con sombra de color) */}
               <div className="relative z-20 w-48 h-48 bg-white/40 backdrop-blur-xl rounded-[40px] shadow-[0_20px_50px_rgba(0,229,255,0.3)] border border-white/50 flex items-center justify-center group overflow-hidden">
                 <Cpu size={80} strokeWidth={1} className="text-[var(--color-olkotech-dark)] group-hover:scale-110 transition-transform duration-500" />
               </div>
 
-              {/* Iconos Satélites (Ahora con colores fijos) */}
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 p-4 bg-white shadow-xl rounded-2xl border border-gray-50 hover:scale-110 transition-transform">
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 p-4 bg-white shadow-xl rounded-2xl border border-gray-100 hover:scale-110 transition-transform">
                 <Code2 className="text-[var(--color-olkotech-primary)]" size={32} />
               </div>
-              <div className="absolute top-1/2 -right-4 -translate-y-1/2 p-4 bg-white shadow-xl rounded-2xl border border-gray-50 hover:scale-110 transition-transform">
+              <div className="absolute top-1/2 -right-4 -translate-y-1/2 p-4 bg-white shadow-xl rounded-2xl border border-gray-100 hover:scale-110 transition-transform">
                 <Database className="text-[var(--color-olkotech-secondary)]" size={32} />
               </div>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 p-4 bg-white shadow-xl rounded-2xl border border-gray-50 hover:scale-110 transition-transform">
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 p-4 bg-white shadow-xl rounded-2xl border border-gray-100 hover:scale-110 transition-transform">
                 <Zap className="text-yellow-400" size={32} fill="currentColor" />
               </div>
             </div>
@@ -83,6 +88,3 @@ export const Hero = () => {
     </section>
   );
 };
-
-// Necesitas importar estos iconos extras
-import { Cpu, Code2, Database } from 'lucide-react';
