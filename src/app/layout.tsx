@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/layout/Navbar"; // Asegúrate que la ruta sea correcta
 import { Footer } from "./components/layout/Footer"; // Asegúrate que la ruta sea correcta
+import { LoadingScreen } from "./components/ui/Loadingscreen";
 
 // 1. Definimos las fuentes (Esto es lo que faltaba)
 const geistSans = Geist({
@@ -32,6 +33,8 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-white text-olkotech-dark">
         {/* El Navbar va dentro del body */}
+        <LoadingScreen/>
+        
         <Navbar />
         
         {/* El contenido principal ocupa el espacio disponible */}
