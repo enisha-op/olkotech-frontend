@@ -1,0 +1,26 @@
+/* src/app/globals.css */
+@import "tailwindcss";
+
+@theme {
+  /* Definición de la Paleta para OLKOTECH en v4 */
+  --color-olkotech-primary: #00e5ff;
+  --color-olkotech-secondary: #0072ff;
+  --color-olkotech-accent: #f0f9ff;
+  --color-olkotech-dark: #0a0f1a;
+  --color-olkotech-silver: #94a3b8;
+  
+  /* Animaciones personalizadas */
+  --animate-float: float 6s ease-in-out infinite;
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+@layer base {
+  body {
+    /* Ahora sí reconocerá olkotech-dark */
+    @apply bg-white text-olkotech-dark antialiased;
+  }
+}
